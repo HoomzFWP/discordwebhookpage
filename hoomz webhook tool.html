@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<h1>Hoomz' Webhook Tool</h1>
+
+<label for="Bot Avi URL">Bot Avi URL (optional):</label>
+<input type="text" id="Bot Avi URL" name="Bot Avi URL"><br><br>
+
+<label for="Bot Name">Bot Name (optional):</label>
+<input type="text" id="Bot Name" name="Bot Name"><br><br>
+
+<label for="Webhook URL">Webhook URL:</label>
+<input type="text" id="Webhook URL" name="Webhook URL"><br><br>
+
+<label for="contents">Contents:</label>
+<input type="text" id="contents" name="contents"><br><br>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoomz' Webhook Tool</title>
+  </head>
+  <body>
+    <button onclick="sendMessage()">Send</button>
+  </body>
+
+  
+
+  <script>
+    function sendMessage() {
+      var request = new XMLHttpRequest();
+      request.open("POST", document.getElementById("Webhook URL").value);
+
+      request.setRequestHeader('Content-type', 'application/json');
+
+      var params = {
+        username: document.getElementById("Bot Name").value,
+        avatar_url: document.getElementById("Bot Avi URL").value,
+        content: document.getElementById("contents").value
+      }
+
+      request.send(JSON.stringify(params));
+    }
+  </script>
+</html>
