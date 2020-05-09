@@ -1,5 +1,4 @@
 # discordwebhookscript
-dumb script to message a discord whatever you want via the webhook
+dumb script to message a discord server whatever you want anonymously via a webhook
 
-to use, simply download the html file and open it via google chrome.
-
+to use, simply download the html file and open it via your web browser.
